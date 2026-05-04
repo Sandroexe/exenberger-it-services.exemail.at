@@ -2,13 +2,13 @@
   "company": {
     "name": "Exenberger IT Services",
     "description": "Professionelle IT-Lösungen und Services",
-    "email": "kontakt@exenberger-it.de",
-    "phone": "+49 (0) XXX XXXXXX",
+    "email": "sandro@exemail.at",
+    "phone": "+436767406799",
     "address": {
-      "street": "Ihre Straße X",
-      "zip": "12345",
-      "city": "Ihre Stadt",
-      "country": "Deutschland"
+      "street": "Schwoich",
+      "zip": "6334",
+      "city": "Schwoich",
+      "country": "Österreich"
     }
   },
   "website": {
@@ -57,5 +57,9 @@
       { "platform": "LinkedIn", "url": "https://linkedin.com" },
       { "platform": "GitHub", "url": "https://github.com" }
     ]
+  },
+  "contact": {
+    "formService": "formspree",
+    "formspreeId": "YOUR_FORMSPREE_ID"
   }
 }

@@ -88,21 +88,46 @@
             <div class="container">
                 <h2>Kontaktieren Sie uns</h2>
                 <p>Haben Sie Fragen oder möchten Sie mehr über unsere Services erfahren?</p>
-                <form style="max-width: 600px; margin-top: 2rem;">
-                    <div style="margin-bottom: 1rem;">
-                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name:</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                <div style="max-width: 600px; margin-top: 2rem;">
+                    <form id="contact-form" style="margin-bottom: 2rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name:</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email:</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Telefon (optional):</label>
+                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Betreff:</label>
+                            <input type="text" id="subject" name="subject" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nachricht:</label>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);"></textarea>
+                        </div>
+                        <div style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy" style="display: inline; margin-left: 0.5rem;">
+                                Ich akzeptiere die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Nachricht absenden</button>
+                        <div id="form-message" style="margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none;" role="alert"></div>
+                    </form>
+                    
+                    <div style="border-top: 1px solid #ddd; padding-top: 2rem;">
+                        <h3>Direkter Kontakt</h3>
+                        <p>
+                            <strong>Email:</strong> <a href="mailto:sandro@exemail.at">sandro@exemail.at</a><br>
+                            <strong>Telefon:</strong> <a href="tel:+436767406799">+43 676 740 6799</a>
+                        </p>
                     </div>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email:</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nachricht:</label>
-                        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Nachricht absenden</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -115,5 +140,6 @@
     </footer>
 
     <script src="assets/script.js"></script>
+    <script src="assets/contact-form.js"></script>
 </body>
 </html>
