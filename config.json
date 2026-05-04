@@ -2,6 +2,9 @@
   "company": {
     "name": "Exenberger IT Services",
     "description": "Professionelle IT-Lösungen und Services",
+    "foundedYear": 2026,
+    "founder": "Sandro Exenberger",
+    "employees": "Gründer und alleiniger Mitarbeiter",
     "email": "sandro@exemail.at",
     "phone": "+436767406799",
     "address": {
@@ -52,7 +55,7 @@
     ]
   },
   "footer": {
-    "copyright": "© 2026 Exenberger IT Services. Alle Rechte vorbehalten.",
+    "copyright": "© 2026 Exenberger IT Services. Gegründet 2026. Alle Rechte vorbehalten.",
     "socialLinks": [
       { "platform": "LinkedIn", "url": "https://linkedin.com" },
       { "platform": "GitHub", "url": "https://github.com" }
