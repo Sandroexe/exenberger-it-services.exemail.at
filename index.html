@@ -3,32 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exenberger IT Services</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            color: #004085;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #6c757d;
-        }
-    </style>
+    <meta name="description" content="Exenberger IT Services - Professionelle IT-Lösungen und Services für Ihr Unternehmen.">
+    <meta name="keywords" content="IT Services, IT Consulting, IT Support, Exenberger">
+    <meta name="author" content="Exenberger IT Services">
+    <title>Startseite | Exenberger IT Services</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <h1>Exenberger IT Services</h1>
-    <p>Unsere Website befindet sich aktuell in Arbeit.<br>Wir sind bald für Sie da!</p>
+    <!-- ============================================
+         HEADER & NAVIGATION
+         ============================================ -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Exenberger IT Services</div>
+            <nav id="main-nav"></nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HAUPTINHALT
+         ============================================ -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero section">
+            <div class="container">
+                <h1>Willkommen bei Exenberger IT Services</h1>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem;">Professionelle IT-Lösungen für Ihr Unternehmen</p>
+                <a href="#contact" class="btn btn-primary">Kontaktieren Sie uns</a>
+                <a href="#services" class="btn btn-outline" style="margin-left: 1rem;">Unsere Services</a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section section" id="about">
+            <div class="container">
+                <h2>Über Uns</h2>
+                <p>
+                    Exenberger IT Services ist Ihr zuverlässiger Partner für professionelle IT-Dienstleistungen.
+                    Mit langjähriger Erfahrung unterstützen wir Unternehmen bei der Digitalisierung und Optimierung
+                    ihrer IT-Infrastruktur.
+                </p>
+                <p>
+                    Unser Team von spezialisierten Fachleuten bietet maßgeschneiderte Lösungen,
+                    die exakt auf Ihre Anforderungen zugeschnitten sind.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services-section section" id="services">
+            <div class="container">
+                <h2>Unsere Services</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="padding: 2rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+                        <h3>IT Consulting</h3>
+                        <p>Strategische Beratung für Ihre IT-Infrastruktur und digitale Transformation.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+                        <h3>IT Support</h3>
+                        <p>Zuverlässiger technischer Support und Wartung für Ihre Systeme 24/7.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+                        <h3>Cloud Lösungen</h3>
+                        <p>Migration und Verwaltung von Cloud-Infrastrukturen für maximale Effizienz.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+                        <h3>Sicherheit</h3>
+                        <p>Umfassende Cybersecurity-Lösungen zum Schutz Ihrer sensiblen Daten.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+                        <h3>Netzwerk Management</h3>
+                        <p>Planung, Implementierung und Optimierung von Netzwerkinfrastrukturen.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #f8f9fa;">
+                        <h3>IT Training</h3>
+                        <p>Schulungen und Trainings für Ihre Mitarbeiter zur Steigerung der IT-Kompetenz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section section" id="contact">
+            <div class="container">
+                <h2>Kontaktieren Sie uns</h2>
+                <p>Haben Sie Fragen oder möchten Sie mehr über unsere Services erfahren?</p>
+                <form style="max-width: 600px; margin-top: 2rem;">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name:</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email:</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nachricht:</label>
+                        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-family);"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Nachricht absenden</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-container"></div>
+    </footer>
+
+    <script src="assets/script.js"></script>
 </body>
 </html>
