@@ -1,5 +1,6 @@
 // ============================================
 // EXENBERGER IT SERVICES - HAUPTSKRIPT
+// Mobile-optimiert
 // ============================================
 
 /**
@@ -44,34 +45,27 @@ async function initializeFooter() {
   const footerContainer = document.querySelector('.footer-container');
   if (!footerContainer) return;
 
-  // Erstelle die Footer-Struktur
   const footerHTML = `
     <div class="footer-content">
       <div class="footer-section">
         <h4>Kontakt</h4>
         <p><strong>${config.company.name}</strong></p>
         <p>${config.company.address.street}<br>
-           ${config.company.address.zip} ${config.company.address.city}<br>
-           ${config.company.address.country}</p>
-        <p>Email: <a href="mailto:${config.company.email}">${config.company.email}</a></p>
-        <p>Tel: <a href="tel:${config.company.phone}">${config.company.phone}</a></p>
+           ${config.company.address.zip} ${config.company.address.city}</p>
+        <p><a href="mailto:${config.company.email}">${config.company.email}</a></p>
+        <p><a href="tel:${config.company.phone}">${config.company.phone}</a></p>
       </div>
       <div class="footer-section">
-        <h4>Unternehmen</h4>
+        <h4>Navigation</h4>
         <a href="index.html">Startseite</a>
-        <a href="#about">Über Uns</a>
-        <a href="#services">Services</a>
+        <a href="index.html#about">Über Uns</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Kontakt</a>
       </div>
       <div class="footer-section">
         <h4>Rechtliches</h4>
         <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutzerklärung</a>
-      </div>
-      <div class="footer-section">
-        <h4>Folgen Sie uns</h4>
-        ${config.footer.socialLinks.map(link => 
-          `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.platform}</a>`
-        ).join('')}
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -99,19 +93,33 @@ async function setPageMetadata(pageTitle) {
 document.addEventListener('DOMContentLoaded', () => {
   initializeNavigation();
   initializeFooter();
+  
+  // Smooth scroll für mobile Geräte
+  if (window.innerWidth < 768) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  }
 });
 
-/**
- * Glatte Scroll-Animation
- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+// Prevent zoom on double-tap
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(event) {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);

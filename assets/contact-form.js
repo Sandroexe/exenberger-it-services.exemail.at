@@ -1,5 +1,5 @@
 /**
- * KONTAKTFORMULAR HANDLER
+ * KONTAKTFORMULAR HANDLER - MOBILE OPTIMIERT
  * Sendet Nachrichten via Formspree (kostenlos, DSGVO-konform)
  */
 
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Disable submit button
         submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Wird gesendet...';
         messageDiv.style.display = 'none';
 
@@ -37,9 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 messageDiv.style.backgroundColor = '#d4edda';
                 messageDiv.style.color = '#155724';
                 messageDiv.style.borderLeft = '4px solid #28A745';
-                messageDiv.innerHTML = '<strong>Erfolg!</strong> Ihre Nachricht wurde versendet. Wir werden uns bald bei Ihnen melden.';
+                messageDiv.innerHTML = '<strong>✓ Erfolg!</strong> Ihre Nachricht wurde versendet. Wir werden uns bald bei Ihnen melden.';
+                
+                // Scroll zu Nachricht
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Form zurücksetzen
                 form.reset();
-                submitBtn.textContent = 'Nachricht absenden';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             } else {
                 throw new Error('Form submission failed');
             }
@@ -47,9 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
             messageDiv.style.backgroundColor = '#f8d7da';
             messageDiv.style.color = '#721c24';
             messageDiv.style.borderLeft = '4px solid #DC3545';
-            messageDiv.innerHTML = '<strong>Fehler!</strong> Die Nachricht konnte nicht versendet werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.';
+            messageDiv.innerHTML = '<strong>✗ Fehler!</strong> Die Nachricht konnte nicht versendet werden. Versuchen Sie es später erneut oder kontaktieren Sie uns direkt.';
+            
+            // Scroll zu Fehler
+            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Nachricht absenden';
+            submitBtn.textContent = originalText;
         }
     });
 });
